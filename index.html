@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://api.fonts.coollabs.io" crossorigin />
+    <link href="https://api.fonts.coollabs.io/css2?family=Oswald&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>BE SMURF - Resistance Berlin</title>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="assets/resis.svg" alt="Resistance Berlin" />
+    </div>
+    <a href="https://ingress.netlify.app/" class="btn-sm" target="_blank" rel="noopener noreferrer">*NEU* Ingress Berlin Zellenwertung</a>
+    <div class="container">
+      <h1>
+        JOIN THE <br />
+        RESISTANCE <br />
+        BERLIN
+      </h1>
+      <h2>Sei Blau, Sei Schlumpf, Sei Berlin! Kämpfe für den Berliner Widerstand! Zusammen befreien wir die Welt von den Shapern!</h2>
+      <a href="https://heimdallr.de/" class="btn">Community Anmeldung</a>
+    </div>
+    <script>
+      // random background image from 01 to 06
+      const random = Math.floor(Math.random() * 6) + 1;
+      document.body.style.backgroundImage = `url(assets/0${random}.jpg)`;
+    </script>
+  </body>
+</html>
