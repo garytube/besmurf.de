@@ -12,23 +12,46 @@
     <title>BE SMURF - Resistance Berlin</title>
   </head>
   <body>
-    <div class="logo">
-      <img src="assets/resis.svg" alt="Resistance Berlin" />
+    <div class="content">
+      <div class="logo">
+        <img src="assets/resis.svg" alt="Resistance Berlin" />
+      </div>
+      <a href="https://ingress.netlify.app/" class="btn-sm" target="_blank" rel="noopener noreferrer">*NEU* Ingress Berlin Zellenwertung</a>
+      <div class="container">
+        <h1>
+          JOIN THE <br />
+          RESISTANCE <br />
+          BERLIN
+        </h1>
+        <h2>Sei Blau, Sei Schlumpf, Sei Berlin! Kämpfe für den Berliner Widerstand! Zusammen befreien wir die Welt von den Shapern!</h2>
+        <a href="https://heimdallr.de/" class="btn">Community Anmeldung</a>
+      </div>
     </div>
-    <a href="https://ingress.netlify.app/" class="btn-sm" target="_blank" rel="noopener noreferrer">*NEU* Ingress Berlin Zellenwertung</a>
-    <div class="container">
-      <h1>
-        JOIN THE <br />
-        RESISTANCE <br />
-        BERLIN
-      </h1>
-      <h2>Sei Blau, Sei Schlumpf, Sei Berlin! Kämpfe für den Berliner Widerstand! Zusammen befreien wir die Welt von den Shapern!</h2>
-      <a href="https://heimdallr.de/" class="btn">Community Anmeldung</a>
-    </div>
+    <div class="overlay"></div>
     <script>
+      let isDesktop = window.innerWidth > 768;
       // random background image from 01 to 06
-      const random = Math.floor(Math.random() * 6) + 1;
-      document.body.style.backgroundImage = `url(assets/0${random}.jpg)`;
+      function randomBg() {
+        const random = Math.floor(Math.random() * 6) + 1;
+        let img;
+        if (isDesktop) {
+          img = `url(assets/ai/0${random}.jpg)`;
+        } else {
+          img = `url(assets/ai/mobile/0${random}.png)`;
+        }
+        const transition = document.startViewTransition(() => (document.body.style.backgroundImage = img));
+      }
+      //bg size contain
+
+      // fade in a new image every 6 seconds
+      setInterval(() => randomBg(), 6000);
+      randomBg();
+
+      // a eventlistner that checks if isDesktop is true or false on resize
+      window.addEventListener('resize', () => {
+        isDesktop = window.innerWidth > 768;
+        console.log({ isDesktop });
+      });
     </script>
   </body>
 </html>
